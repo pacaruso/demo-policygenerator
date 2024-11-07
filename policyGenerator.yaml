@@ -5,15 +5,16 @@ metadata:
 policyDefaults:
   namespace: policies
   placement:
-    clusterSelectors:
-      rhdp_usage: development
-  remediationAction: inform
+  clusterSelector:
+      matchExpressions:
+      - key: environment
+        operator: In
+        values:
+        - prod
+        - qa
+  remediationAction: enforce
 policies:
   - name: openshift-gitops-installed
     manifests:
       - path: openshift-gitops-subscription.yaml
-  - name: kubeadmin-removed
-    manifests:
-      - path: kubeadmin-pass.yaml
-    complianceType: mustnothave
     
