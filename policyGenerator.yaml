@@ -12,7 +12,7 @@ policyDefaults:
           values:
           - prod
           - qa
-  remediationAction: enforce
+  remediationAction: inform
 policies:
   - name: openshift-gitops-installed
     manifests:
