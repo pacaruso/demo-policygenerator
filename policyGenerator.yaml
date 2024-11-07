@@ -5,13 +5,13 @@ metadata:
 policyDefaults:
   namespace: policies
   placement:
-  clusterSelector:
-      matchExpressions:
-      - key: environment
-        operator: In
-        values:
-        - prod
-        - qa
+    clusterSelector:
+        matchExpressions:
+        - key: environment
+          operator: In
+          values:
+          - prod
+          - qa
   remediationAction: enforce
 policies:
   - name: openshift-gitops-installed
